@@ -17,7 +17,7 @@ package archivista
 import (
 	"context"
 
-	archivistaapi "github.com/in-toto/archivista/pkg/api"
+	archivistaapi "github.com/ramidij/archivista/pkg/api"
 )
 
 type searchGitoidResponse struct {
@@ -65,7 +65,7 @@ func (c *Client) SearchGitoids(ctx context.Context, vars SearchGitoidVariables) 
   }
 }`
 
-	response, err := archivistaapi.GraphQlQuery[searchGitoidResponse](ctx, c.url, query, vars)
+	response, err := archivistaapi.GraphQlQuery[searchGitoidResponse](ctx, c.url, c.token, query, vars)
 	if err != nil {
 		return nil, err
 	}

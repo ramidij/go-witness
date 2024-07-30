@@ -15,11 +15,13 @@
 package archivista
 
 type Client struct {
-	url string
+	url   string
+	token string
 }
 
-func New(url string) *Client {
+func New(url string, token string) *Client {
 	return &Client{
 		url,
+		token,
 	}
 }
